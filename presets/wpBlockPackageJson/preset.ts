@@ -5,95 +5,52 @@ export default definePreset({
   name: 'wpPackageJson-preset',
 
   handler: async (context) => {
-    await executeCommand({
-      title: 'Add wp start block dev command to package.json - npm run start',
-      command: 'npm',
-      arguments: ['pkg', 'set', 'scripts.start=wp-scripts start'],
-      data(stdout) {
-        console.log('Command output:', stdout)
-      },
-    }).catch((error) => {
-      console.error('Command failed:', error)
-    })
-
-    await executeCommand({
-      title:
-        'Add wp start block dev command to package.json - npm run start:hot',
-      command: 'npm',
-      arguments: ['pkg', 'set', 'scripts.start:hot=wp-scripts start --hot'],
-      data(stdout) {
-        console.log('Command output:', stdout)
-      },
-    }).catch((error) => {
-      console.error('Command failed:', error)
-    })
-
-    await executeCommand({
-      title:
-        'Add wp start block dev command to package.json - npm run start:playground',
-      command: 'npm',
-      arguments: [
-        'pkg',
-        'set',
-        'scripts.start:playground=npx @wp-now/wp-now start & wp-scripts start',
-      ],
-      data(stdout) {
-        console.log('Command output:', stdout)
-      },
-    }).catch((error) => {
-      console.error('Command failed:', error)
-    })
-
-    await executeCommand({
-      title:
-        'Add wp start block dev command to package.json - npm run start:playground',
-      command: 'npm',
-      arguments: [
-        'pkg',
-        'set',
-        'scripts.start:playground-hot=npx @wp-now/wp-now start & wp-scripts start --hot',
-      ],
-      data(stdout) {
-        console.log('Command output:', stdout)
-      },
-    }).catch((error) => {
-      console.error('Command failed:', error)
-    })
-
-    await executeCommand({
-      title: 'Add wp build block dev command to package.json - npm run build',
-      command: 'npm',
-      arguments: ['pkg', 'set', 'scripts.build=wp-scripts build'],
-      data(stdout) {
-        console.log('Command output:', stdout)
-      },
-    }).catch((error) => {
-      console.error('Command failed:', error)
+    await prompt({
+      title: 'prompt block name',
+      name: 'blockName',
+      text: 'What is the name of the block?',
+      default: 'new-block',
     })
 
     await prompt({
-      title: 'prompt file name',
-      name: 'name',
-      text: 'What is the name of the file?',
+      title: 'prompt block namespace',
+      name: 'blockNameSpace',
+      text: 'What is the block namespace (nameSpace/block-name)?',
+      default: 'wp',
     })
-    console.log(context.prompts.name)
 
-    const fileName = context.prompts.name
+    await prompt({
+      title: 'prompt block title',
+      name: 'blockTitle',
+      text: 'What is the block title (visible in editor)?',
+      default: 'New Block',
+    })
+
+    const blockName = context.prompts.blockName
+    const blockNameSpace = context.prompts.blockNameSpace
+    const blockTitle = context.prompts.blockTitle
 
     await extractTemplates({
-      to: fileName,
+      to: blockName,
+    })
+
+    await renamePaths({
+      paths: `${blockName}/**/block-plugin.php`,
+      transformer: ({ name }) => `${blockName}.php`,
     })
 
     await fs.writeFileSync(`ryan.txt`, '@@katie @@ryan', 'utf8')
     await fs.writeFileSync(`ryans.txt`, '@@katie @@ryan', 'utf8')
 
     await editFiles({
-      files: [`${fileName}/package.json`, `${fileName}/src/block.json`],
+      files: [`${blockName}/package.json`, `${blockName}/src/block.json`],
       operations: [
         {
           type: 'replace-variables',
           variables: {
-            blockName: 'YOOOOO',
+            blockNameSpace: blockNameSpace,
+            blockName: blockName,
+            blockTitle: blockTitle,
           },
         },
       ],

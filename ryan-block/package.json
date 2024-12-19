@@ -1,5 +1,5 @@
 {
-  "name": "@@blockName",
+  "name": "ryan-block",
   "type": "module",
   "scripts": {
     "start": "wp-scripts start",

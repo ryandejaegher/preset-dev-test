@@ -1,9 +1,9 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "@@blockNameSpace/@@blockName",
+  "name": "ryan-blockSpace/ryan-block",
   "version": "1.0.0",
-  "title": "@@blockName",
+  "title": "ryan-block",
   "supports": {},
   "attributes": {},
   "editorScript": "file:./index.js",
