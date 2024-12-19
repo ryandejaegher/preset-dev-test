@@ -4,9 +4,8 @@ export default definePreset({
 
   handler: async () => {
     await extractTemplates({
-      from: 'git',
+      title: 'Extracting gitignore templates to root',
       extractDotFiles: true,
     })
-
   },
 })
