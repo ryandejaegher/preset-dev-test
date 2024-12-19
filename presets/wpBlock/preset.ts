@@ -31,10 +31,12 @@ export default definePreset({
     const blockTitle = context.prompts.blockTitle
 
     await extractTemplates({
+      title: `Extracting templates to root for ${blockName}`,
       to: blockName,
     })
 
     await renamePaths({
+      title: `Renaming block-plugin.php to ${blockName}.php`,
       paths: `${blockName}/**/block-plugin.php`,
       transformer: ({ name }) => `${blockName}.php`,
     })
@@ -43,6 +45,7 @@ export default definePreset({
     await fs.writeFileSync(`ryans.txt`, '@@katie @@ryan', 'utf8')
 
     await editFiles({
+      title: `Replacing variables in ${blockName} files`,
       files: [`${blockName}/package.json`, `${blockName}/src/block.json`],
       operations: [
         {
@@ -70,6 +73,7 @@ export default definePreset({
     })
 
     await executeCommand({
+      title: `Installing @wordpress/scripts in ${blockName}`,
       command: 'npm',
       arguments: [
         'install',
