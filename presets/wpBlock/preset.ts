@@ -68,5 +68,16 @@ export default definePreset({
         },
       ],
     })
+
+    await executeCommand({
+      command: 'npm',
+      arguments: [
+        'install',
+        '--prefix',
+        `${blockName}`,
+        '@wordpress/scripts',
+        '--save-dev',
+      ],
+    })
   },
 })
