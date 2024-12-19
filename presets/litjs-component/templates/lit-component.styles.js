@@ -1,4 +1,4 @@
-export const buttonStyles = css`
+export const componentStyles = css`
   .blue-button {
     color: white;
     background-color: blue;
