@@ -17,5 +17,11 @@
     "stylelint-config-standard": "^36.0.1",
     "stylelint-order": "^6.0.4",
     "vitest": "^2.1.8"
+  },
+  "scripts": {
+    "start": "wp-scripts start",
+    "start:playground": "npx @wp-now/wp-now start & wp-scripts start",
+    "start:hot": "wp-scripts start --hot",
+    "build": "wp-scripts build"
   }
 }
