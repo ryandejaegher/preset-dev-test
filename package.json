@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "author": "Ryan Dejaegher <dejaegher.ryan@gmail.com>",
+  "license": "MIT",
+  "preset": "preset.ts",
+  "devDependencies": {
+    "@preset/core": "^0.11.3",
+    "@types/node": "^22.10.2"
+  }
+}
