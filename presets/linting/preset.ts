@@ -22,5 +22,13 @@ export default definePreset({
       ],
       dev: true,
     })
+
+    await executeCommand({
+      command: 'npx',
+      arguments: ['sort-package-json'],
+      data(stdout) {
+        console.log(stdout)
+      },
+    })
   },
 })
