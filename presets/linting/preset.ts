@@ -1,13 +1,13 @@
-
 // This preset installs ESLint, Prettier, and Stylelint with their respective plugins and configurations.
 export default definePreset({
   name: 'linting-preset',
 
   handler: async () => {
     await extractTemplates({
-      from: 'linting',
+      title: 'Extracting linting templates to root',
       extractDotFiles: true,
     })
+
     await installPackages({
       for: 'node',
       packages: [

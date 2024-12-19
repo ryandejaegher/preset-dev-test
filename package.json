@@ -22,6 +22,7 @@
     "start": "wp-scripts start",
     "start:playground": "npx @wp-now/wp-now start & wp-scripts start",
     "start:hot": "wp-scripts start --hot",
-    "build": "wp-scripts build"
+    "build": "wp-scripts build",
+    "start:playground-hot": "npx @wp-now/wp-now start & wp-scripts start --hot"
   }
 }

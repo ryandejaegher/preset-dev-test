@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "no-empty-source": true,
+    "color-hex-length": "short",
+    "color-no-hex": true,
+    "color-named": "never",
+    "order/properties-alphabetical-order": true,
+    "selector-max-id": 0,
+    "value-keyword-case": "lower",
+    "selector-max-compound-selectors": 3,
+    "no-duplicate-selectors": true,
+    "declaration-no-important": true,
+    "font-weight-notation": "numeric",
+    "shorthand-property-no-redundant-values": true
+  }
+}
