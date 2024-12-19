@@ -13,8 +13,8 @@
   "include": [
     "./*.ts",
     "./src/**/*.ts",
-    "./presets/**/*.ts",
+    "src/presets/**/*.ts",
     "linting/preset-linting.ts"
-],
+  ],
   "exclude": ["templates", "node_modules"]
 }

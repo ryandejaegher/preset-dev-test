@@ -9,4 +9,3 @@ test('component is visible', async ({ page }) => {
 
   await expect(component).toBeVisible()
 })
-componentTagNoDashes

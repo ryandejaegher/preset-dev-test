@@ -1,4 +1,4 @@
-import * as changeCase from '../../src/utils/changeCase.js'
+import * as changeCase from '../../utils/changeCase.js'
 // This preset installs a gitignore.
 export default definePreset({
   name: 'litjs-component-preset',
