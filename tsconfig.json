@@ -12,7 +12,9 @@
   },
   "include": [
     "./*.ts",
-    "./src/**/*.ts"
-  ],
+    "./src/**/*.ts",
+    "./presets/**/*.ts",
+    "linting/preset-linting.ts"
+],
   "exclude": ["templates", "node_modules"]
 }

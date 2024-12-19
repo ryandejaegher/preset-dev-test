@@ -1,3 +1,4 @@
+// This preset installs Vitest and Playwright with their respective plugins and configurations.
 export default definePreset({
   name: 'js-testing-preset',
 
