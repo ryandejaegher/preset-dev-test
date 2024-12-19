@@ -1,0 +1,10 @@
+{
+  "aliases": {
+    "lint": {
+      "type": "repository",
+      "organization": "ryandejaegher",
+      "repository": "preset-dev-testing",
+      "path": "lint-preset.ts"
+    }
+  }
+}
