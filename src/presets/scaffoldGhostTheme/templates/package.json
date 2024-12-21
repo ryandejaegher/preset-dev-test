@@ -16,7 +16,7 @@
         "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
         "test": "npx gscan .",
         "pretest": "npm run build",
-        "tailwind": "npx tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/output.css --watch"
+        "tailwind": "npx tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/built/tailwind.css --watch"
     },
     "author": {
         "name": "Ghost Foundation",
