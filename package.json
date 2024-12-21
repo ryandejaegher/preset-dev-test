@@ -10,6 +10,10 @@
     "start:playground": "npx @wp-now/wp-now start & wp-scripts start",
     "start:playground-hot": "npx @wp-now/wp-now start & wp-scripts start --hot"
   },
+  "dependencies": {
+    "astro": "^5.1.1",
+    "change-case": "^5.4.4"
+  },
   "devDependencies": {
     "@playwright/test": "^1.49.1",
     "@preset/core": "^0.11.3",
@@ -24,9 +28,5 @@
     "stylelint-order": "^6.0.4",
     "vitest": "^2.1.8"
   },
-  "preset": "preset.ts",
-  "dependencies": {
-    "astro": "^5.1.1",
-    "change-case": "^5.4.4"
-  }
+  "preset": "preset.ts"
 }
