@@ -1,0 +1,13 @@
+{
+  "name": "yourname/my-plugin",
+  "description": "A WordPress plugin for custom post types and fields using ACF",
+  "type": "wordpress-plugin",
+  "require": {
+    "advanced-custom-fields/advanced-custom-fields-pro": "^6.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "MyPlugin\\": "src/"
+    }
+  }
+}
