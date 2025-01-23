@@ -1,4 +1,3 @@
-// This preset installs ESLint, Prettier, and Stylelint with their respective plugins and configurations.
 export default definePreset({
   name: 'linting-preset',
 
@@ -19,6 +18,8 @@ export default definePreset({
         'stylelint',
         'stylelint-config-standard',
         'stylelint-order',
+        'stylelint-config-standard-scss',
+        'postcss-lit',
       ],
       dev: true,
     })
